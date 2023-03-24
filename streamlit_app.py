@@ -14,7 +14,7 @@ with st.form("my_form"):
     G = left.number_input("Growth", value=0.00)
     R = right.number_input("Retention", value=0.00)
     
-    N = left.number_input("Avg MRR", value=0.00)
+    N = left.number_input("Avg MRR, $", value=0.00)
 
     submit = st.form_submit_button()
     
@@ -86,5 +86,4 @@ elif M >= 0.6 and G >= 0.5 and R >= 0.95:
 if submit:
     Valuation = A * N * 12
     st.balloons()
-    st.success(Valuation)
-    st.metric("Valuation", Valuation)
+    st.metric("Valuation", "$"Valuation)
