@@ -39,7 +39,6 @@ elif M < 0.3 and G >= 0.5 and R < 0.95:
 elif M < 0.3 and G >= 0.5 and R >= 0.95:
     A = 2.4
 
-#node2 margin < 60%
 elif M < 0.6 and G < 0.15 and R < 0.9:
     A = 2.0
 elif M < 0.6 and G < 0.15 and R < 0.95:
@@ -61,7 +60,6 @@ elif M < 0.6 and G >= 0.5 and R < 0.95:
 elif M < 0.6 and G >= 0.5 and R >= 0.95:
     A = 3.68
 
-#node3 margin >= 60%
 elif M >= 0.6 and G < 0.15 and R < 0.9:
     A = 2.84
 elif M >= 0.6 and G < 0.15 and R < 0.95:
@@ -83,10 +81,9 @@ elif M >= 0.6 and G >= 0.5 and R < 0.95:
 elif M >= 0.6 and G >= 0.5 and R >= 0.95:
     A = 4.85
 
-    Valuation = A * N * 12
-    submit = st.form_submit_button()
 
-if submitted:
-   
-    st.success(Valuation)
+if submit:
+    Valuation = A * N * 12
     st.balloons()
+
+    st.success(🎉 Valuation)
