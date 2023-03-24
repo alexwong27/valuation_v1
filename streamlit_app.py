@@ -3,17 +3,18 @@ import streamlit as st
 
 st.set_page_config(page_title="Test Decision Tree", page_icon="🌲", layout="centered")
 
-st.title("🖥 Please enter variables. Use decimals.")
-
+st.title("🖥 Please enter variables")
+st.subtitle("Use decimals")
+    
 with st.form("my_form"):
     left, right = st.columns((1, 10))
     
-    M = right.number_input("Margin", min_value=0, max_value=1)
+    M = right.number_input("Margin")
     left, right = st.columns(2)
-    G = left.number_input("Growth", min_value=0, max_value=1)
-    R = right.number_input("Retention", min_value=0, max_value=1)
+    G = left.number_input("Growth")
+    R = right.number_input("Retention")
     
-    N = left.number_input("Avg MRR", min_value=0)
+    N = left.number_input("Avg MRR")
 
     submit = st.form_submit_button()
     
