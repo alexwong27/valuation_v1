@@ -9,12 +9,12 @@ st.header("Use decimals")
 with st.form("my_form"):
     left, right = st.columns((1, 10))
     
-    M = right.number_input("Margin", value=0)
+    M = right.number_input("Margin", value=0.00)
     left, right = st.columns(2)
-    G = left.number_input("Growth", value=0)
-    R = right.number_input("Retention", value=0)
+    G = left.number_input("Growth", value=0.00)
+    R = right.number_input("Retention", value=0.00)
     
-    N = left.number_input("Avg MRR", value=0)
+    N = left.number_input("Avg MRR", value=0.00)
 
     submit = st.form_submit_button()
     
