@@ -5,28 +5,79 @@ st.set_page_config(page_title="Test Decision Tree", page_icon="🌲", layout="ce
 
 st.title("🖥 Valuation tool")
 
-form = st.form(key="annotation")
-
-with form:
+with st.form("my_form"):
     cols = st.columns((1, 1))
-    M = cols[0].input("Margin:")
-    bug_type = cols[1].selectbox(
-        "Bug type:", ["Front-end", "Back-end", "Data related", "404"], index=2
-    )
-    comment = st.text_area("Comment:")
-    cols = st.columns(2)
-    date = cols[0].date_input("Bug date occurrence:")
-    bug_severity = cols[1].slider("Bug severity:", 1, 5, 2)
+    M = cols[0].number_input("Margin:")
+    G = cols[1].number_input("Growth:")
+    R = cols[2].number_input("Retention:")
+    N = cols[3].number_input("Avg MRR:")
     submitted = st.form_submit_button(label="Submit")
-
-
-    left, right = st.columns((1, 10))
-    M = right.input("Margin", value=0.3)
-    left, right = st.columns(2)
-    G = left.input("Growth", value=0.15)
-    R = right.input("Retention", value=0.95)
-    N = left.input("Average MRR", value=25000)
     
+if M < 0.3 and G < 0.15 and R < 0.9:
+    A = 1.6
+elif M < 0.3 and G < 0.15 and R < 0.95:
+    A = 1.7
+elif M < 0.3 and G < 0.15 and R >= 0.95:
+    A = 1.8
+
+elif M < 0.3 and G < 0.5 and R < 0.9:
+    A = 1.9
+elif M < 0.3 and G < 0.5 and R < 0.95:
+    A = 2.0
+elif M < 0.3 and G < 0.5 and R >= 0.95:
+    A = 2.1
+
+elif M < 0.3 and G >= 0.5 and R < 0.9:
+    A = 2.2
+elif M < 0.3 and G >= 0.5 and R < 0.95:
+    A = 2.3
+elif M < 0.3 and G >= 0.5 and R >= 0.95:
+    A = 2.4
+
+#node2 margin < 60%
+elif M < 0.6 and G < 0.15 and R < 0.9:
+    A = 2.0
+elif M < 0.6 and G < 0.15 and R < 0.95:
+    A = 2.21
+elif M < 0.6 and G < 0.15 and R >= 0.95:
+    A = 2.42
+
+elif M < 0.6 and G < 0.5 and R < 0.9:
+    A = 2.63
+elif M < 0.6 and G < 0.5 and R < 0.95:
+    A = 2.84
+elif M < 0.6 and G < 0.5 and R >= 0.95:
+    A = 3.05
+    
+elif M < 0.6 and G >= 0.5 and R < 0.9:
+    A = 3.26
+elif M < 0.6 and G >= 0.5 and R < 0.95:
+    A = 3.47
+elif M < 0.6 and G >= 0.5 and R >= 0.95:
+    A = 3.68
+
+#node3 margin >= 60%
+elif M >= 0.6 and G < 0.15 and R < 0.9:
+    A = 2.84
+elif M >= 0.6 and G < 0.15 and R < 0.95:
+    A = 3.05
+elif M >= 0.6 and G < 0.15 and R >= 0.95:
+    A = 3.25
+
+elif M >= 0.6 and G < 0.5 and R < 0.9:
+    A = 3.45
+elif M >= 0.6 and G < 0.5 and R < 0.95:
+    A = 3.75
+elif M >= 0.6 and G < 0.5 and R >= 0.95:
+    A = 4.1
+
+elif M >= 0.6 and G >= 0.5 and R < 0.9:
+    A = 3.05
+elif M >= 0.6 and G >= 0.5 and R < 0.95:
+    A = 4.55
+elif M >= 0.6 and G >= 0.5 and R >= 0.95:
+    A = 4.85
+
     Valuation = A * N * 12
     submit = st.form_submit_button()
 
