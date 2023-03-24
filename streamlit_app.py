@@ -6,13 +6,17 @@ st.set_page_config(page_title="Test Decision Tree", page_icon="🌲", layout="ce
 st.title("🖥 Valuation tool")
 
 with st.form("my_form"):
-    cols = st.columns((1, 2))
-    M = cols[0].number_input("Margin:")
-    G = cols[1].number_input("Growth:")
-    R = cols[2].number_input("Retention:")
-    N = cols[1].number_input("Avg MRR:")
-    st.form_submit_button(label="Submit")
-    submitted = st.form_submit_button(label="Submit")
+    left, right = st.columns((1, 10))
+    color = left.color_picker("Color", value="#b4cffa")
+    M = right.number_input("Margin", value=0.30)
+    left, right = st.columns(2)
+    G = left.number_input("Growth", value=0.15)
+    R = right.number_input("Retention", value=0.95)
+    product_type = left.selectbox("Product type", ["Data app crafting", "ML model training"])
+    N = right.number_input("Avg MRR", value=25000)
+    price_per_unit = st.slider("Price per unit", 1, 100, 60)
+    submit = st.form_submit_button()
+    
     
 if M < 0.3 and G < 0.15 and R < 0.9:
     A = 1.6
