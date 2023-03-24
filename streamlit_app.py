@@ -5,14 +5,13 @@ st.set_page_config(page_title="Test Decision Tree", page_icon="🌲", layout="ce
 
 st.title("🖥 Valuation tool")
 
-st.form_submit_button(label="Submit")
-
 with st.form("my_form"):
-    cols = st.columns((1, 1))
+    cols = st.columns((1, 2))
     M = cols[0].number_input("Margin:")
     G = cols[1].number_input("Growth:")
-    R = cols[0].number_input("Retention:")
+    R = cols[2].number_input("Retention:")
     N = cols[1].number_input("Avg MRR:")
+    st.form_submit_button(label="Submit")
     submitted = st.form_submit_button(label="Submit")
     
 if M < 0.3 and G < 0.15 and R < 0.9:
