@@ -7,14 +7,14 @@ st.title("🖥 Valuation tool")
 
 with st.form("my_form"):
     left, right = st.columns((1, 10))
-    color = left.color_picker("Color", value="#b4cffa")
+    
     M = right.number_input("Margin", value=0.30)
     left, right = st.columns(2)
     G = left.number_input("Growth", value=0.15)
     R = right.number_input("Retention", value=0.95)
-    product_type = left.selectbox("Product type", ["Data app crafting", "ML model training"])
+    
     N = right.number_input("Avg MRR", value=25000)
-    price_per_unit = st.slider("Price per unit", 1, 100, 60)
+
     submit = st.form_submit_button()
     
     
