@@ -9,7 +9,7 @@ form = st.form(key="annotation")
 
 with form:
     cols = st.columns((1, 1))
-    author = cols[0].text_input("Report author:")
+    M = cols[0]input("Margin:")
     bug_type = cols[1].selectbox(
         "Bug type:", ["Front-end", "Back-end", "Data related", "404"], index=2
     )
