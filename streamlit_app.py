@@ -8,12 +8,12 @@ st.title("🖥 Please enter variables. Use decimals.")
 with st.form("my_form"):
     left, right = st.columns((1, 10))
     
-    M = right.number_input("Margin", min_value=0, max_value=1, format=%d)
+    M = right.number_input("Margin", min_value=0, max_value=1)
     left, right = st.columns(2)
-    G = left.number_input("Growth", min_value=0, max_value=1, format=%d)
-    R = right.number_input("Retention", min_value=0, max_value=1, format=%d)
+    G = left.number_input("Growth", min_value=0, max_value=1)
+    R = right.number_input("Retention", min_value=0, max_value=1)
     
-    N = right.number_input("Avg MRR", min_value=0)
+    N = left.number_input("Avg MRR", min_value=0)
 
     submit = st.form_submit_button()
     
