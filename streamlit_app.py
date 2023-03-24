@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Test Decision Tree", page_icon="🌲", layout="centered")
 
 st.title("🖥 Please enter variables")
-st.subtitle("Use decimals")
+st.header("Use decimals")
     
 with st.form("my_form"):
     left, right = st.columns((1, 10))
