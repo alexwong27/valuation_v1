@@ -85,5 +85,4 @@ elif M >= 0.6 and G >= 0.5 and R >= 0.95:
 if submit:
     Valuation = A * N * 12
     st.balloons()
-
-    st.success(🎉 Valuation)
+    st.success(Valuation)
