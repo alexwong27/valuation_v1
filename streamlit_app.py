@@ -87,4 +87,4 @@ if submit:
     Valuation = A * N * 12
     st.balloons()
     st.success(Valuation)
-    st.metric("Valuation": Valuation)
+    st.metric("Valuation", Valuation)
