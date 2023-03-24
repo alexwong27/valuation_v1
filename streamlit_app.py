@@ -9,7 +9,7 @@ st.header("Use decimals")
 with st.form("my_form"):
     left, right = st.columns((1, 10))
     
-    M = left.number_input("Margin", value=0)
+    M = right.number_input("Margin", value=0)
     left, right = st.columns(2)
     G = left.number_input("Growth", value=0)
     R = right.number_input("Retention", value=0)
